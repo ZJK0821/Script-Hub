@@ -1,16 +1,23 @@
 name: "哔哩哔哩"
-desc: "重写"
+desc: "去广告"
 
 http:
 
   mitm:
     - "app.bilibili.com"
 
-  url-rewrite:
+ url-rewrite:
     - >-
       ^https://app.bilibili.com/x/v2/splash/show - reject-dict
 
   script:
+
+    - match: ^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index
+      name: "bilibili_json_2"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
 
     - match: ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab
       name: "bilibili_json_2"
