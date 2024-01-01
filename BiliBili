@@ -6,7 +6,7 @@ http:
   mitm:
     - "app.bilibili.com"
 
- url-rewrite:
+  url-rewrite:
     - >-
       ^https://app.bilibili.com/x/v2/splash/show - reject-dict
 
