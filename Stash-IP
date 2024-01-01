@@ -1,4 +1,4 @@
-name: IP信息
+name: 节点信息
 desc: IP信息面板
 tiles:
   - name: IPxinxi
