@@ -1,5 +1,5 @@
 name: "Script.Hub"
-desc: " "
+desc: "转换脚本"
 
 http:
   force-http-engine:
