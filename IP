@@ -3,12 +3,11 @@ $httpClient.get(url, function(error, response, data){
     let jsonData = JSON.parse(data)
 	let query =jsonData.query
 	let country =jsonData.country
-	let city =jsonData.city
     let emoji = getFlagEmoji(jsonData.countryCode)
 const params = getParams($argument);
   body = {
     title: "节点信息",
-    content: `IP：${query}\n国家/地区：${country}\n城市：${city}`,
+    content: `IP：${query}\n地区：${country}`,
         icon: params.icon,
         "icon-color": params.color
   }
