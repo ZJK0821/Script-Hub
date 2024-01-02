@@ -21,10 +21,23 @@ http:
       type: request
       timeout: 60
 
+    - match: ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(.+)\?(.*)format=json
+      name: "Spotify.json_3"
+      type: response
+      require-body: true
+
+    - match: ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)
+      name: "Spotify.json_3"
+      type: response
+      require-body: true
+      binary-mode: true
+
 script-providers:
   "spotify-proto_1":
     url: https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
     interval: 86400
   "spotify-json_2":
     url: https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js
+  "spotify.json_3":
+    url: https://raw.githubusercontent.com/DualSubs/Universal/main/js/DualSubs.Subtitles.Translate.response.js
     interval: 86400
