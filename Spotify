@@ -25,12 +25,17 @@ http:
       name: "Spotify.json_3"
       type: response
       require-body: true
+      max-size: -1
+      binary-mode: true
+      timeout: 60
 
     - match: ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)
       name: "Spotify.json_3"
       type: response
       require-body: true
+      max-size: -1
       binary-mode: true
+      timeout: 60
 
 script-providers:
   "spotify-proto_1":
